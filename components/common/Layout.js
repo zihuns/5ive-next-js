@@ -5,10 +5,32 @@ import NavBar from "./NavBar";
 export default function Layout({ children }) {
   return (
     <>
-      <Header />
-      <NavBar />
-      <div>{children}</div>
+      <div className="top">
+        <Header />
+        <NavBar />
+      </div>
+
+      <div className="content">{children}</div>
       <Footer />
+
+      <style jsx>
+        {`
+          .top {
+            min-height: 100px;
+            position: fixed;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            background-color: #fff;
+            border-bottom: 1px solid #d8d8d8;
+          }
+
+          .content {
+            padding-top: 150px;
+            min-height: 850px;
+          }
+        `}
+      </style>
     </>
   );
 }

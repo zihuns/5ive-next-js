@@ -11,10 +11,19 @@ export default function Header() {
         </div>
         <div className="search">
           <form>
-            <input type="text"></input>
+            <input type="text" placeholder="검색어를 입력해주세요"></input>
+            <img width="16" src="/favicon.ico" />
           </form>
         </div>
         <div className="icons">
+          <Link href="/member/join">
+            <a>회원가입</a>
+          </Link>
+
+          <Link href="/member/login">
+            <a>로그인</a>
+          </Link>
+
           <Link href="/">
             <img src="/vercel.svg" />
           </Link>
@@ -27,8 +36,16 @@ export default function Header() {
               margin: 0 auto;
               display: flex;
               justify-content: space-between;
+              align-items: center;
             }
           }
+
+          @media screen and (max-width: 900px) {
+            .search {
+              display: none;
+            }
+          }
+
           @media screen and (max-width: 768px) {
             /* 모바일에 사용될 스트일 시트를 여기에 작성합니다. */
           }

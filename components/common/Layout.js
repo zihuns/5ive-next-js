@@ -23,10 +23,11 @@ export default function Layout({ children }) {
             right: 0;
             background-color: #fff;
             border-bottom: 1px solid #d8d8d8;
+            z-index: 999;
           }
 
           .content {
-            padding-top: 150px;
+            padding-top: 55px;
             min-height: 850px;
           }
         `}

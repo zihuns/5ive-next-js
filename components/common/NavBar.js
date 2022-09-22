@@ -62,6 +62,12 @@ export default function NavBar() {
             justify-content: space-between;
             align-items: center;
           }
+
+          li {
+            font-size: 17px;
+            font-weight: 600;
+            line-height: 55px;
+          }
         }
 
         @media screen and (max-width: 900px) {
@@ -72,6 +78,15 @@ export default function NavBar() {
 
         @media screen and (max-width: 768px) {
           /* 모바일에 사용될 스트일 시트를 여기에 작성합니다. */
+
+          ul {
+            list-style: none;
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
         }
       `}</style>
     </nav>

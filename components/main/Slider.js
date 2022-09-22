@@ -20,8 +20,6 @@ export default function App() {
 
   return (
     <>
-      <div className="empty"></div>
-
       <Swiper
         loop={true} // 슬라이드 반복 여부
         slidesPerView={1} // 한 슬라이드에 보여줄 갯수
@@ -52,11 +50,6 @@ export default function App() {
       </Swiper>
 
       <style jsx>{`
-        .empty {
-          max-height: 120px;
-          height: 15vh;
-        }
-
         img {
           max-height: 360px;
           height: 20vw;

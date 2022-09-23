@@ -16,10 +16,9 @@ export default function login() {
             다양한 서비스를 이용해보세요.
           </div>
           <div className="login-button">
-            <SNSButton color="#f9e000" context="카카오로 시작하기" />
-            <SNSButton color="#2db400" context="네이버로 시작하기" />
-            <SNSButton color="#000000" context="Apple로 시작하기" />
-            <SNSButton color="#e9e9e9" context="QR코드로 시작하기" />
+            <SNSButton imgsrc="/member/kakao.png" link="/" context="카카오" />
+            <SNSButton imgsrc="/member/naver.png" link="/" context="네이버" />
+            <SNSButton imgsrc="/member/apple.png" link="/" context="애플" />
           </div>
         </div>
       </div>
@@ -55,10 +54,10 @@ export default function login() {
           }
 
           .login-button {
-            margin: 2vw 0;
+            margin: 2vw auto;
+            width: 50%;
             display: flex;
             height: 20vw;
-            flex-direction: column;
             justify-content: space-between;
           }
         }

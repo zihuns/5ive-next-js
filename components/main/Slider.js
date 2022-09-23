@@ -42,10 +42,10 @@ export default function App() {
             margin: "0 auto",
           }}
         >
-          <img src="/1.png" />
+          <img src="/main/1.png" />
         </SwiperSlide>
         <SwiperSlide className="swiper-slide">
-          <img src="/2.png" />
+          <img src="/main/2.png" />
         </SwiperSlide>
       </Swiper>
 

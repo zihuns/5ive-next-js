@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function ProductEc({ imgsrc, link, context }) {
+export default function ProductRec({ imgsrc, link, context }) {
   return (
     <>
       <div className="wrapper">
@@ -21,6 +21,8 @@ export default function ProductEc({ imgsrc, link, context }) {
       <style jsx>{`
         .wrapper {
           border: 1px solid;
+          border-radius: 20px;
+          background-color: #f5f5f5;
 
           img {
             max-height: 192px;

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import NavBar from "../../components/common/NavBar";
 
-export default function Sidebar() {
+export default function Mysidebar() {
   const router = useRouter();
   const q_test = (cid) => {
     router.push({
@@ -19,39 +19,24 @@ export default function Sidebar() {
     <>
       <div className="contents">
         <div className="title">
-          <h2>과자모음</h2>
+          <h2>마이페이지</h2>
         </div>
         <ul>
           <li>
             <div onClick={() => q_test(1)} className="category">
               <Link href={`/product/1`}>
-                <a>전체</a>
+                <a>내 정보 수정</a>
               </Link>
             </div>
           </li>
           <li>
             <Link href="/product/productList">
-              <a>비스킷/샌드</a>
+              <a>주문내역</a>
             </Link>
           </li>
           <li>
             <Link href="/product/productList">
-              <a>스낵/봉지과자</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/product/productList">
-              <a>캔디/사탕/젤리</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/product/productList">
-              <a>초콜릿</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/product/productList">
-              <a>껌/자일리톨</a>
+              <a>쿠폰함</a>
             </Link>
           </li>
         </ul>

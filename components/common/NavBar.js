@@ -1,6 +1,18 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function NavBar() {
+  const router = useRouter();
+  const q_test = (cid) => {
+    router.push({
+      pathname: `/product/${cid}`,
+      query: {
+        cid,
+        title: "test",
+      },
+    });
+  };
+
   return (
     <nav>
       <div className="wrapper">
@@ -11,9 +23,11 @@ export default function NavBar() {
             </Link>
           </li>
           <li>
-            <Link href="/product/productList">
-              <a>전체</a>
-            </Link>
+            <div onClick={() => q_test(1)} className="category">
+              <Link href={`/product/1`}>
+                <a>전체</a>
+              </Link>
+            </div>
           </li>
           <li>
             <Link href="/product/productList">

@@ -1,3 +1,4 @@
+import MyInfoCard from "../../components/mypage/MyInfoCard";
 import Mysidebar from "../../components/mypage/mysidebar";
 
 export default function myOrder() {
@@ -9,13 +10,97 @@ export default function myOrder() {
             <Mysidebar />
           </div>
           <div className="wrapper">
-            <div className="myinfo">
-              <div className="myinfo_left">익명의 회원님</div>
-              <div className="myinfo_right">주문내역 쿠폰</div>
+            <div>
+              <MyInfoCard />
             </div>
+
             <div className="myorder">
               <div className="myorderTitle">주문내역</div>
-              <div className="myorderProduct">상품</div>
+              <table>
+                <colgroup>
+                  <col style={{ width: "15%" }} />
+                  <col style={{ width: "70%" }} />
+                  <col style={{ width: "15%", textAlign: "right" }} />
+                </colgroup>
+                <tbody>
+                  <tr style={{ height: "3vw" }}>
+                    <td
+                      colSpan="2"
+                      style={{
+                        fontSize: "16px",
+                        fontWeight: "600",
+                        color: "#2c2c2c",
+                      }}
+                    >
+                      주문번호 123456
+                    </td>
+
+                    <td>2022-xx-xx</td>
+                  </tr>
+                  <tr style={{ height: "1vw" }}>
+                    <td rowSpan="3">
+                      <img width="96px" src="/sample.png" />
+                    </td>
+                    <td>상품이름</td>
+                    <td style={{ color: "#898989" }}>10,000원</td>
+                  </tr>
+                  <tr style={{ height: "1vw" }}>
+                    <td style={{ color: "#898989" }}>상품상세옵션</td>
+                    <td
+                      style={{
+                        fontSize: "18px",
+                        fontWeight: "600",
+                      }}
+                    >
+                      8,000원
+                    </td>
+                  </tr>
+                  <tr
+                    style={{ height: "2vw", borderBottom: "2px solid #d0cfcf" }}
+                  >
+                    <td></td>
+                    <td>x 1</td>
+                  </tr>
+                  <tr style={{ height: "3vw" }}>
+                    <td
+                      colSpan="2"
+                      style={{
+                        fontSize: "16px",
+                        fontWeight: "600",
+                        color: "#2c2c2c",
+                      }}
+                    >
+                      주문번호 123456
+                    </td>
+
+                    <td>2022-xx-xx</td>
+                  </tr>
+                  <tr style={{ height: "1vw" }}>
+                    <td rowSpan="3">
+                      <img width="96px" src="/sample.png" />
+                    </td>
+                    <td>상품이름</td>
+                    <td style={{ color: "#898989" }}>10,000원</td>
+                  </tr>
+                  <tr style={{ height: "1vw" }}>
+                    <td style={{ color: "#898989" }}>상품상세옵션</td>
+                    <td
+                      style={{
+                        fontSize: "18px",
+                        fontWeight: "600",
+                      }}
+                    >
+                      8,000원
+                    </td>
+                  </tr>
+                  <tr
+                    style={{ height: "2vw", borderBottom: "2px solid #d0cfcf" }}
+                  >
+                    <td></td>
+                    <td>x 1</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
@@ -33,11 +118,6 @@ export default function myOrder() {
             .wrapper {
               max-width: 970px;
               width: 75%;
-              .myinfo {
-                margin-bottom: 10%;
-                display: flex;
-                border: 1px solid;
-              }
 
               .myorder {
                 .myorderTitle {
@@ -47,6 +127,25 @@ export default function myOrder() {
                   border-bottom: 2px solid #3a3a3a;
                   line-height: 24px;
                   padding-bottom: 15px;
+                }
+
+                table {
+                  width: 100%;
+                  border-collapse: collapse;
+                  font-size: 14px;
+                  font-weight: 600;
+                  color: #2c2c2c;
+
+                  tr:nth-child(4n + 2) td:nth-child(3) {
+                    text-align: right;
+                    text-decoration: line-through;
+                    padding-right: 20px;
+                  }
+
+                  tr:not(:nth-child(4n + 2)) td:nth-child(2) {
+                    text-align: right;
+                    padding-right: 20px;
+                  }
                 }
               }
             }

@@ -23,19 +23,19 @@ export default function Mysidebar() {
         </div>
         <ul>
           <li>
-            <div onClick={() => q_test(1)} className="category">
-              <Link href={`/product/1`}>
+            <div>
+              <Link href="/mypage/myEdit">
                 <a>내 정보 수정</a>
               </Link>
             </div>
           </li>
           <li>
-            <Link href="/product/productList">
+            <Link href="/mypage/myOrder">
               <a>주문내역</a>
             </Link>
           </li>
           <li>
-            <Link href="/product/productList">
+            <Link href="/mypage/myCoupon">
               <a>쿠폰함</a>
             </Link>
           </li>
@@ -57,7 +57,7 @@ export default function Mysidebar() {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            align-items: center;
+            /* align-items: center; */
           }
 
           li {

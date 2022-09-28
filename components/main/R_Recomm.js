@@ -17,7 +17,6 @@ export default function C_Recomm() {
             <ProductRec />
             <ProductRec />
             <ProductRec />
-            <ProductRec />
           </div>
         </div>
       </div>

@@ -1,10 +1,10 @@
 import Link from "next/link";
 
-export default function ProductRec({ imgsrc, name, price, rate }) {
+export default function ProductRec({ id, imgsrc, name, price, rate }) {
   return (
     <>
       <div className="wrapper">
-        <Link href="/">
+        <Link href={`/product/productDetail/${id}`}>
           <a>
             <div className="imageSection">
               <img src={imgsrc} />
@@ -27,13 +27,13 @@ export default function ProductRec({ imgsrc, name, price, rate }) {
                   textDecoration: "line-through",
                 }}
               >
-                {price}
+                {price}원
               </p>
               <div
                 className="priceRate"
                 style={{ display: "flex", justifyContent: "space-between" }}
               >
-                <span>{price * (1 - rate * 0.01)}</span>
+                <span>{price * (1 - rate * 0.01)}원</span>
                 <span style={{ color: "#f11c2b" }}>{rate}%</span>
               </div>
             </div>
@@ -64,3 +64,11 @@ export default function ProductRec({ imgsrc, name, price, rate }) {
     </>
   );
 }
+
+ProductRec.defaultProps = {
+  id: 1,
+  imgsrc: "/sample.png",
+  name: "test",
+  price: 10000,
+  rate: 10,
+};

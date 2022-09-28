@@ -18,7 +18,6 @@ export default function productCidList() {
   // https://nomadcoders.co/nextjs-fundamentals/lectures/3451 7분 참고
   const router = useRouter();
   const cat_id = router.query.cat_id;
-
   const cat_name = { 1: "전체 상품", 2: "비스킷/샌드" };
 
   return (
@@ -40,6 +39,7 @@ export default function productCidList() {
                   <li className="productInner">
                     <div className="productBox" key={product.id}>
                       <ProductRec
+                        id={product.id}
                         imgsrc={product.imageUrl}
                         name={product.name}
                         price={product.price}

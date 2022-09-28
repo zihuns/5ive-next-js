@@ -4,16 +4,14 @@ import NavBar from "../../components/common/NavBar";
 
 export default function Sidebar() {
   const router = useRouter();
-  const q_test = (cid) => {
+  const category = (cat_id) => {
     router.push({
-      pathname: `/product/${cid}`,
+      pathname: `/product`,
       query: {
-        cid,
-        title: "test",
+        cat_id,
       },
     });
   };
-  console.log(router.query);
 
   return (
     <>
@@ -23,36 +21,49 @@ export default function Sidebar() {
         </div>
         <ul>
           <li>
-            <div onClick={() => q_test(1)} className="category">
-              <Link href={`/product/1`}>
-                <a>전체</a>
-              </Link>
+            <Link href="/product?cat_id=1">
+              <a>전체</a>
+            </Link>
+          </li>
+          <li>
+            <div onClick={() => category(2)} className="category">
+              <a>비스킷/샌드</a>
             </div>
           </li>
           <li>
-            <Link href="/product/productList">
-              <a>비스킷/샌드</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/product/productList">
+            <div onClick={() => category(3)} className="category">
               <a>스낵/봉지과자</a>
-            </Link>
+            </div>
           </li>
           <li>
-            <Link href="/product/productList">
+            <div onClick={() => category(4)} className="category">
+              <a>박스과자</a>
+            </div>
+          </li>
+          <li>
+            <div onClick={() => category(5)} className="category">
+              <a>시리얼/바</a>
+            </div>
+          </li>
+          <li>
+            <div onClick={() => category(6)} className="category">
               <a>캔디/사탕/젤리</a>
-            </Link>
+            </div>
           </li>
           <li>
-            <Link href="/product/productList">
+            <div onClick={() => category(7)} className="category">
               <a>초콜릿</a>
-            </Link>
+            </div>
           </li>
           <li>
-            <Link href="/product/productList">
+            <div onClick={() => category(8)} className="category">
               <a>껌/자일리톨</a>
-            </Link>
+            </div>
+          </li>
+          <li>
+            <div onClick={() => category(9)} className="category">
+              <a>선물세트</a>
+            </div>
           </li>
         </ul>
       </div>

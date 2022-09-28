@@ -22,13 +22,13 @@ export default function Mysidebar() {
           <h2>마이페이지</h2>
         </div>
         <ul>
-          <li>
+          {/* <li>
             <div>
               <Link href="/mypage/myEdit">
                 <a>내 정보 수정</a>
               </Link>
             </div>
-          </li>
+          </li> */}
           <li>
             <Link href="/mypage/myOrder">
               <a>주문내역</a>

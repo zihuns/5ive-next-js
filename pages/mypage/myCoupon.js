@@ -24,8 +24,12 @@ export default function myCoupon() {
                   <col style={{ width: "20%" }} />
                 </colgroup>
                 <thead>
-                  <th colSpan="2">사용 가능한 쿠폰</th>
-                  <th colSpan="2">사용한 쿠폰</th>
+                  <th className="coupon" colSpan="2">
+                    사용 가능한 쿠폰
+                  </th>
+                  <th className="coupon" colSpan="2">
+                    사용한 쿠폰
+                  </th>
                 </thead>
                 <tbody>
                   <tr style={{ height: "3vw" }}>
@@ -70,6 +74,10 @@ export default function myCoupon() {
                   font-size: 14px;
                   font-weight: 600;
                   color: #2c2c2c;
+
+                  .clicked {
+                    background-color: yellow;
+                  }
                 }
               }
             }

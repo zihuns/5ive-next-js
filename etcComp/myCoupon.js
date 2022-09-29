@@ -1,18 +1,16 @@
-import MyInfoCard from "../../components/mypage/MyInfoCard";
-import Mysidebar from "../../components/mypage/mysidebar";
+import Title from "../components/common/Title";
+import MyInfoCard from "../components/mypage/MyInfoCard";
+import Mysidebar from "../components/mypage/mysidebar";
 
 export default function myCoupon() {
   return (
     <>
+      <Title title="쿠폰함" />
       <div>
         <div className="contents">
-          <div className="sidebar">
-            <Mysidebar />
-          </div>
+          <div className="sidebar">{/* <Mysidebar /> */}</div>
           <div className="wrapper">
-            <div>
-              <MyInfoCard />
-            </div>
+            <div>{/* <MyInfoCard /> */}</div>
 
             <div className="myorder">
               <div className="myorderTitle">쿠폰</div>
@@ -63,7 +61,7 @@ export default function myCoupon() {
                   font-size: 24px;
                   font-weight: 700;
                   color: #3a3a3a;
-                  border-bottom: 2px solid #3a3a3a;
+                  /* border-bottom: 2px solid #3a3a3a; */
                   line-height: 24px;
                   padding-bottom: 15px;
                 }
@@ -75,8 +73,8 @@ export default function myCoupon() {
                   font-weight: 600;
                   color: #2c2c2c;
 
-                  .clicked {
-                    background-color: yellow;
+                  th {
+                    border: 1px solid;
                   }
                 }
               }

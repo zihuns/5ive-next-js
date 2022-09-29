@@ -44,7 +44,7 @@ export default function MyInfoCard() {
           border-radius: 25px;
 
           .myinfo_left {
-            width: 45%;
+            width: 50%;
             margin: 20px 0px 20px 75px;
             padding: 0px 15px;
             border-right: 2px solid #e6e4e4;
@@ -65,7 +65,7 @@ export default function MyInfoCard() {
           }
 
           .myinfo_right {
-            width: 55%;
+            width: 50%;
             margin: 20px;
             padding: 20px 50px;
             display: flex;

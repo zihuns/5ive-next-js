@@ -50,7 +50,9 @@ export default function Mysidebar({ mypageCallback }) {
             line-height: 40px;
             padding: 0;
             color: #dedede;
-
+            a {
+              cursor: pointer;
+            }
             .active {
               color: #3a3a3a;
             }

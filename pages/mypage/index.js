@@ -15,7 +15,7 @@ export default function mypage() {
 
   return (
     <>
-      <Title title="주문내역" />
+      <Title title="마이페이지" />
       <div>
         <div className="contents">
           <div className="sidebar">

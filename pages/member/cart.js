@@ -1,3 +1,4 @@
+import Link from "next/link";
 import ButtonComp from "../../components/common/buttonComp";
 import Title from "../../components/common/Title";
 import SNSButton from "../../components/member/SNSButton";
@@ -82,7 +83,11 @@ export default function cart() {
           </div>
         </div>
         <div className="order-btn">
-          <ButtonComp context="전체상품 주문" />
+          <Link href="/payment">
+            <a>
+              <ButtonComp context="전체상품 주문" />
+            </a>
+          </Link>
           <ButtonComp context="선택상품 주문" />
         </div>
       </div>

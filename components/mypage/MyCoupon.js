@@ -1,8 +1,12 @@
+import { useState } from "react";
 import Title from "../../components/common/Title";
 import MyInfoCard from "../../components/mypage/MyInfoCard";
 import Mysidebar from "../../components/mypage/mysidebar";
+import MyCouponCard from "./MyCouponCard";
 
 export default function MyCoupon() {
+  const [tab, setTab] = useState("valid");
+
   return (
     <>
       <Title title="쿠폰함" />
@@ -18,20 +22,27 @@ export default function MyCoupon() {
                 <col style={{ width: "20%" }} />
               </colgroup>
               <thead>
-                <th className="coupon" colSpan="2">
+                <th
+                  className={`${tab === "valid" ? "left" : "normalLeft"}`}
+                  onClick={() => setTab("valid")}
+                  colSpan="2"
+                >
                   사용 가능한 쿠폰
                 </th>
-                <th className="coupon" colSpan="2">
+                <th
+                  className={`${tab === "invalid" ? "right" : "normalRight"}`}
+                  onClick={() => setTab("invalid")}
+                  colSpan="2"
+                >
                   사용한 쿠폰
                 </th>
               </thead>
               <tbody>
-                <tr style={{ height: "3vw" }}>
-                  <td>스낵/쿠키 카테고리 쿠폰 </td>
-                  <td>15% (최대 5,000원) </td>
-                  <td>10,000원 이상 구매시</td>
-                  <td>사용 가능 기간 2022-09-15</td>
-                </tr>
+                {tab == "valid" ? (
+                  <MyCouponCard test="사용 가능한" />
+                ) : (
+                  <MyCouponCard test="사용한" />
+                )}
               </tbody>
             </table>
           </div>
@@ -59,8 +70,27 @@ export default function MyCoupon() {
                 font-weight: 600;
                 color: #2c2c2c;
 
-                th {
-                  border: 1px solid;
+                .normalLeft {
+                  border: 2px solid #e6e4e4;
+                  border-right: 2px solid;
+                  border-bottom: 2px solid;
+                }
+
+                .normalRight {
+                  border: 2px solid #e6e4e4;
+                  border-bottom: 2px solid;
+                }
+
+                .left {
+                  color: #000;
+                  border: 2px solid;
+                  border-bottom: none;
+                }
+
+                .right {
+                  color: #000;
+                  border: 2px solid;
+                  border-bottom: none;
                 }
               }
             }

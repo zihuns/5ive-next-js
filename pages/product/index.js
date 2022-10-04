@@ -58,6 +58,7 @@ export default function productCidList() {
                 (product) =>
                   product.cat_id == cat_id || product.name.includes(search),
               )
+
               .map((product) => {
                 return (
                   <li className="productInner">

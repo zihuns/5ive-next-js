@@ -147,7 +147,7 @@ export default function cart() {
 
           .order-btn {
             margin: 2vw auto 3vw;
-            width: 25%;
+            width: 30%;
             display: flex;
             justify-content: space-around;
           }

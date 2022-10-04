@@ -1,32 +1,41 @@
-import { useState } from "react";
-import Title from "../../components/common/Title";
-import MyCoupon from "../../components/mypage/MyCoupon";
 import MyInfoCard from "../../components/mypage/MyInfoCard";
-import MyOrder from "../../components/mypage/MyOrder";
 import Mysidebar from "../../components/mypage/mysidebar";
 
-export default function mypage() {
-  const [tab, setTab] = useState("order");
-
-  function handleTab(menu) {
-    setTab(menu);
-  }
-
+export default function myCoupon() {
   return (
     <>
-      <Title title="마이페이지" />
       <div>
         <div className="contents">
           <div className="sidebar">
-            <Mysidebar mypageCallback={handleTab} />
+            <Mysidebar />
           </div>
           <div className="wrapper">
             <div>
               <MyInfoCard />
             </div>
 
-            <div className="mypageMenu">
-              {tab == "order" ? <MyOrder /> : <MyCoupon />}
+            <div className="myorder">
+              <div className="myorderTitle">쿠폰</div>
+              <table>
+                <colgroup>
+                  <col style={{ width: "20%" }} />
+                  <col style={{ width: "30%" }} />
+                  <col style={{ width: "30%" }} />
+                  <col style={{ width: "20%" }} />
+                </colgroup>
+                <thead>
+                  <th colSpan="2">사용 가능한 쿠폰</th>
+                  <th colSpan="2">사용한 쿠폰</th>
+                </thead>
+                <tbody>
+                  <tr style={{ height: "3vw" }}>
+                    <td>스낵/쿠키 카테고리 쿠폰 </td>
+                    <td>15% (최대 5,000원) </td>
+                    <td>10,000원 이상 구매시</td>
+                    <td>사용 가능 기간 2022-09-15</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
@@ -61,17 +70,6 @@ export default function mypage() {
                   font-size: 14px;
                   font-weight: 600;
                   color: #2c2c2c;
-
-                  tr:nth-child(4n + 2) td:nth-child(3) {
-                    text-align: right;
-                    text-decoration: line-through;
-                    padding-right: 20px;
-                  }
-
-                  tr:not(:nth-child(4n + 2)) td:nth-child(2) {
-                    text-align: right;
-                    padding-right: 20px;
-                  }
                 }
               }
             }

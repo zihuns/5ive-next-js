@@ -1,13 +1,46 @@
+import { useState } from "react";
 import Title from "../../components/common/Title";
 import MyInfoCard from "../../components/mypage/MyInfoCard";
 import Mysidebar from "../../components/mypage/mysidebar";
 
 export default function MyOrder() {
+  const items = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+  ];
+  const [marker, setMarker] = useState(5);
+
+  function loadList() {
+    setMarker(marker + 5);
+  }
+
+  const list = items.map((item) => <li>{item}</li>);
+
   return (
     <>
       <Title title="주문내역" />
       <div>
         <div className="wrapper">
+          <div className="App">
+            <ul>{list.slice(0, marker)}</ul>
+            {items.length > marker ? (
+              <button onClick={loadList}>MORE</button>
+            ) : (
+              ""
+            )}
+          </div>
           <div className="myorder">
             <div className="myorderTitle">주문내역</div>
             <table>
@@ -17,44 +50,6 @@ export default function MyOrder() {
                 <col style={{ width: "15%", textAlign: "right" }} />
               </colgroup>
               <tbody>
-                <tr style={{ height: "3vw" }}>
-                  <td
-                    colSpan="2"
-                    style={{
-                      fontSize: "16px",
-                      fontWeight: "600",
-                      color: "#2c2c2c",
-                    }}
-                  >
-                    주문번호 123456
-                  </td>
-
-                  <td>2022-xx-xx</td>
-                </tr>
-                <tr style={{ height: "1vw" }}>
-                  <td rowSpan="3">
-                    <img width="96px" src="/sample.png" />
-                  </td>
-                  <td>상품이름</td>
-                  <td style={{ color: "#898989" }}>10,000원</td>
-                </tr>
-                <tr style={{ height: "1vw" }}>
-                  <td style={{ color: "#898989" }}>상품상세옵션</td>
-                  <td
-                    style={{
-                      fontSize: "18px",
-                      fontWeight: "600",
-                    }}
-                  >
-                    8,000원
-                  </td>
-                </tr>
-                <tr
-                  style={{ height: "2vw", borderBottom: "2px solid #d0cfcf" }}
-                >
-                  <td></td>
-                  <td>x 1</td>
-                </tr>
                 <tr style={{ height: "3vw" }}>
                   <td
                     colSpan="2"

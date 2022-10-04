@@ -5,6 +5,7 @@ import NavBar from "../../components/common/NavBar";
 
 export default function Sidebar() {
   const [tab, setTab] = useState("order");
+
   const router = useRouter();
   const category = (cat_id) => {
     router.push({
@@ -93,6 +94,7 @@ export default function Sidebar() {
             font-weight: 700;
             line-height: 40px;
             padding: 0;
+
             color: #dedede;
 
             a {

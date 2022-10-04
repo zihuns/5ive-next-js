@@ -11,6 +11,7 @@ import Review from "../../../components/product/Review";
 export default function productDetail() {
   const router = useRouter();
   const productId = router.query.id;
+
   const [quantity, setQuantity] = useState(1);
   const [tab, setTab] = useState("info");
 
@@ -31,6 +32,7 @@ export default function productDetail() {
   return (
     <>
       <Title title="상품상세" />
+
       {data?.data.map((product) => {
         return (
           <div className="wrapper">

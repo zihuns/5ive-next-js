@@ -1,6 +1,30 @@
+import { useEffect, useState } from "react";
 import ButtonComp from "../../components/common/buttonComp";
+import DaumPost from "../../components/payment/DaumPost";
 
 export default function payment() {
+  const [zipcode, setZipcode] = useState("");
+  const [addr1, setAddr1] = useState("");
+  const [addr2, setAddr2] = useState("");
+  const [popup, setPopup] = useState(false);
+  const [Selected, setSelected] = useState("");
+
+  function popupHandler() {
+    setPopup(!popup);
+  }
+
+  function zipcodeHandler(zipcode) {
+    setZipcode(zipcode);
+  }
+
+  function addr1Handler(addr1) {
+    setAddr1(addr1);
+  }
+
+  const handleSelect = (e) => {
+    setSelected(e.target.value);
+  };
+
   return (
     <>
       <div className="wrapper">
@@ -56,10 +80,10 @@ export default function payment() {
                   <td>
                     <input
                       id="oname"
-                      class="inputTypeText"
+                      className="inputTypeText"
                       placeholder=""
                       size="15"
-                      value=""
+                      defaultValue=""
                       type="text"
                     />
                   </td>
@@ -68,18 +92,28 @@ export default function payment() {
                   {/* https://choiiis.github.io/web/toy-project-sign-up-and-in-page-2/ */}
                   <th scope="row">이메일</th>
                   <td>
-                    <input id="oemail1" class="mailId" value="" type="text" />@{" "}
-                    <span class="mailAddress">
-                      <span class="directInput ec-compact-etc">
+                    <input
+                      id="oemail1"
+                      className="mailId"
+                      defaultValue=""
+                      type="text"
+                    />
+                    @{" "}
+                    <span className="mailAddress">
+                      <span className="directInput ec-compact-etc">
                         <input
                           id="oemail2"
                           placeholder="직접입력"
-                          value=""
+                          defaultValue={Selected}
                           type="text"
                         />
                       </span>
-                      <select id="oemail3">
-                        <option value="" selected="selected">
+                      <select
+                        id="oemail3"
+                        onChange={handleSelect}
+                        defaultValue={"DEFAULT"}
+                      >
+                        <option value="DEFAULT" disabled>
                           -이메일 선택-
                         </option>
                         <option value="naver.com">naver.com</option>
@@ -99,7 +133,7 @@ export default function payment() {
                 <tr>
                   <th scope="row">휴대전화</th>
                   <td>
-                    <select id="ophone1_1">
+                    <select id="ophone1_1" defaultValue={"010"}>
                       <option value="02">02</option>
                       <option value="031">031</option>
                       <option value="032">032</option>
@@ -128,17 +162,17 @@ export default function payment() {
                     -
                     <input
                       id="ophone1_2"
-                      maxlength="4"
+                      maxLength="4"
                       size="4"
-                      value=""
+                      defaultValue=""
                       type="text"
                     />
                     -
                     <input
                       id="ophone1_3"
-                      maxlength="4"
+                      maxLength="4"
                       size="4"
-                      value=""
+                      defaultValue=""
                       type="text"
                     />
                   </td>
@@ -147,13 +181,63 @@ export default function payment() {
                   <th scope="row" rowSpan="3">
                     주소
                   </th>
-                  <td>뭐시기</td>
+                  <td>
+                    <div className="address_search">
+                      <input
+                        id="ozipcode1"
+                        name="ozipcode1"
+                        placeholder="우편번호"
+                        className="inputTypeText"
+                        type="text"
+                        maxLength="14"
+                        readOnly
+                        defaultValue={zipcode ? zipcode : ""}
+                      />
+                      <button
+                        onClick={() => {
+                          popupHandler();
+                        }}
+                      >
+                        우편번호 찾기
+                      </button>
+                      {popup && (
+                        <DaumPost
+                          zipcodeHandler={zipcodeHandler}
+                          addrHandler={addr1Handler}
+                        />
+                      )}
+                    </div>
+                  </td>
                 </tr>
                 <tr>
-                  <td>뭐시기</td>
+                  <td>
+                    <input
+                      id="oaddr1"
+                      name="oaddr1"
+                      placeholder="기본주소"
+                      className="inputTypeText"
+                      type="text"
+                      size="60"
+                      maxLength="100"
+                      readOnly
+                      defaultValue={addr1 ? addr1 : ""}
+                    />
+                  </td>
                 </tr>
                 <tr>
-                  <td>뭐시기</td>
+                  <td>
+                    <input
+                      id="oaddr1"
+                      name="oaddr1"
+                      placeholder="상세주소"
+                      className="inputTypeText"
+                      type="text"
+                      size="60"
+                      maxLength="100"
+                      readOnly
+                      value={addr2}
+                    />
+                  </td>
                 </tr>
               </tbody>
             </table>

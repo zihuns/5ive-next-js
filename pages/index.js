@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import Title from "../components/common/Title";
 import C_Recomm from "../components/main/C_Recomm";
 import R_Recomm from "../components/main/R_Recomm";
@@ -18,6 +19,7 @@ export default function Home() {
       <Slider />
       <C_Recomm />
       <R_Recomm />
+
       <style jsx>{`
         .contents {
           margin-top: 35px;
